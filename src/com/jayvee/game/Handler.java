@@ -4,7 +4,7 @@ import java.awt.Graphics;
 import java.util.LinkedList;
 
 public class Handler {
-	LinkedList<GameObject> objects = new LinkedList<GameObject>();
+	private LinkedList<GameObject> objects = new LinkedList<GameObject>();
 	
 	public void tick() {
 		for(GameObject object : objects) {
@@ -24,5 +24,9 @@ public class Handler {
 	
 	public void removeObject(GameObject object) {
 		objects.remove(object);
+	}
+	
+	public LinkedList<GameObject> getObjects(){
+		return objects;
 	}
 }
