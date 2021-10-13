@@ -14,12 +14,10 @@ public class Game extends Canvas implements Runnable{
 	private Thread thread;
 	private boolean running = false;
 	private Handler handler;
-	private KeyInput keyInput;
 	
 	public Game() {
 		handler = new Handler();
-		keyInput = new KeyInput(handler);
-		this.addKeyListener(keyInput);
+		this.addKeyListener(new KeyInput());
 		
 		new Window(WIDTH, HEIGHT, "Lets build a Game!", this);
 		
@@ -62,7 +60,7 @@ public class Game extends Canvas implements Runnable{
 			
 			if(System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
-//				System.out.println("FPS: " + frames);
+				//System.out.println("FPS: " + frames);
 				frames = 0;
 			}
 			
