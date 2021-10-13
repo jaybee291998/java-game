@@ -20,20 +20,7 @@ public class Game extends Canvas implements Runnable{
 	public Game() {
 		new Window(WIDTH, HEIGHT, "Lets build a Game!", this);
 		handler = new Handler();
-		r = new Random();
-		int x, y, velX, velY;
-		for(int i = 0; i < 100; i++) {
-			x = r.nextInt(WIDTH);
-			y = r.nextInt(HEIGHT);
-			velX = r.nextInt(2);
-			velY = r.nextInt(2);
-			Player player = new Player(x, y, ID.Player);
-			player.setVelX(velX);
-			player.setVelY(velY);
-			
-			handler.addObject(player);
-		}
-		
+		handler.addObject(new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player));
 	}
 	public synchronized void start() {
 		thread = new Thread(this);
