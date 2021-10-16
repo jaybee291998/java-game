@@ -16,10 +16,12 @@ public class Game extends Canvas implements Runnable{
 	private boolean running = false;
 	private Handler handler;
 	private Random r;
+	private HUD hud;
 	
 	public Game() {
 		handler = new Handler();
 		this.addKeyListener(new KeyInput(handler));
+		hud = new HUD();
 		
 		new Window(WIDTH, HEIGHT, "Lets build a Game!", this);
 		r = new Random();
@@ -85,6 +87,7 @@ public class Game extends Canvas implements Runnable{
 	
 	private void tick() {
 		handler.tick();
+		hud.tick();
 	}
 	
 	private void render() {
@@ -100,14 +103,14 @@ public class Game extends Canvas implements Runnable{
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		handler.render(g);
+		hud.render(g);
 		
 		g.dispose();
 		bs.show();
 	}
 	public static int clamp(int val, int min, int max) {
-		if(val > max) return max;
-		else if(val < min) return min;
-		return val;
+		// clever implementation of clamp heheh
+		return Math.max(min, Math.min(val, max));
 	}
 	public static void main(String args[]) {
 		Game game = new Game();
