@@ -13,8 +13,8 @@ public class Player extends GameObject{
 		x += velX;
 		y += velY;
 		// dont allow player to move out of bounds
-		x = Game.clamp(x, 0, Game.WIDTH-40);
-		y = Game.clamp(y, 0, Game.HEIGHT-65);
+		x = Game.clamp(x, 0, Game.WIDTH-38);
+		y = Game.clamp(y, 0, Game.HEIGHT-61);
 	}
 	public void render(Graphics g) {
 		g.setColor(Color.white);
