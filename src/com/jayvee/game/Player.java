@@ -12,9 +12,9 @@ public class Player extends GameObject{
 	public void tick() {
 		x += velX;
 		y += velY;
-		// allow the player to move if its not out of bounds
-		if(x <= 0 || x >= Game.WIDTH - 40)  x -= velX;
-		if(y <= 0 || y >= Game.HEIGHT - 65) y -= velY;
+		// dont allow player to move out of bounds
+		x = Game.clamp(x, 0, Game.WIDTH-40);
+		y = Game.clamp(y, 0, Game.HEIGHT-65);
 	}
 	public void render(Graphics g) {
 		g.setColor(Color.white);

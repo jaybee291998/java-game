@@ -52,6 +52,7 @@ public class Game extends Canvas implements Runnable{
 	}
 	
 	public void run() {
+		this.requestFocus();
 		// the game loop
 		long lastTime = System.nanoTime();
 		double amountOfTicks = 60.0;
@@ -103,7 +104,11 @@ public class Game extends Canvas implements Runnable{
 		g.dispose();
 		bs.show();
 	}
-	
+	public static int clamp(int val, int min, int max) {
+		if(val > max) return max;
+		else if(val < min) return min;
+		return val;
+	}
 	public static void main(String args[]) {
 		Game game = new Game();
 	}
