@@ -13,6 +13,10 @@ public class BasicEnemy extends GameObject{
 	public void tick() {
 		x += velX;
 		y += velY;
+		
+		// add basic movements
+		if(y <= 0 || y >= Game.HEIGHT - 32) velY *= -1;
+		if(x <= 0 || x >= Game.WIDTH - 32) velX *= -1;
 	}
 
 	@Override

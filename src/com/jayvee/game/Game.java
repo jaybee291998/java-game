@@ -21,8 +21,14 @@ public class Game extends Canvas implements Runnable{
 		
 		new Window(WIDTH, HEIGHT, "Lets build a Game!", this);
 		
-		handler.addObject(new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player));
-		handler.addObject(new BasicEnemy(WIDTH/2-32, HEIGHT/2-32, ID.BasicEnemy));
+		GameObject player = new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player);
+		GameObject enemy = new BasicEnemy(WIDTH/2-32, HEIGHT/2-32, ID.BasicEnemy);
+		// set the velX and velY of the enemy
+		enemy.setVelX(5);
+		enemy.setVelY(5);
+		
+		handler.addObject(player);
+		handler.addObject(enemy);
 	}
 	public synchronized void start() {
 		thread = new Thread(this);
