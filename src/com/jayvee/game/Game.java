@@ -26,7 +26,7 @@ public class Game extends Canvas implements Runnable{
 		new Window(WIDTH, HEIGHT, "Lets build a Game!", this);
 		r = new Random();
 		GameObject player = new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player, handler);
-		GameObject enemy = new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy);
+		GameObject enemy = new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler);
 		
 		enemy.setVelX(r.nextInt(15));
 		enemy.setVelY(r.nextInt(15));

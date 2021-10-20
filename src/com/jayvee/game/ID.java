@@ -2,5 +2,6 @@ package com.jayvee.game;
 
 public enum ID {
 	Player(),
-	BasicEnemy();
+	BasicEnemy(),
+	Trail()
 }
