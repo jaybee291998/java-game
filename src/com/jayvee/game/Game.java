@@ -28,8 +28,8 @@ public class Game extends Canvas implements Runnable{
 		GameObject player = new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player, handler);
 		GameObject enemy = new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy);
 		
-		enemy.setVelX(r.nextInt(5));
-		enemy.setVelY(r.nextInt(5));
+		enemy.setVelX(r.nextInt(15));
+		enemy.setVelY(r.nextInt(15));
 		
 		handler.addObject(player);
 		handler.addObject(enemy);
